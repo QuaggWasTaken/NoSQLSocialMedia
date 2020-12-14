@@ -39,10 +39,16 @@ const UserSchema = new Schema({
     id: false
 });
 
-const User = model('User', UserSchema);
+UserSchema.post('remove', function(doc) {
+    // doc will be the removed Person document
+    Event.remove({_id: { $in: doc.eventsAttended }})
+})
 
-User.virtual('friendCount').get(function() {
+UserSchema.virtual('friendCount').get(function() {
   return this.friends.length;
 })
+
+const User = model('User', UserSchema);
+
 
 module.exports = User;
