@@ -1,4 +1,4 @@
-# TechCMS
+# NoSQL Social Media
   ![badmath](https://img.shields.io/github/license/QuaggWasTaken/NoSQLSocialMedia)
   
   ## Description 
